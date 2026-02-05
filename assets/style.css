@@ -1,0 +1,334 @@
+:root {
+    --brand-1: #fddeff;
+    --brand-2: #bb58ff;
+    --brand-3: #037bff;
+    --text: #1d1842;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.55);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: var(--text);
+    background: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.gradient-orb {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: -1;
+    opacity: 0.45;
+    animation: float 8s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    background: linear-gradient(140deg, var(--brand-1), var(--brand-2));
+    top: -120px;
+    left: -100px;
+}
+
+.orb-2 {
+    background: linear-gradient(120deg, var(--brand-2), var(--brand-3));
+    bottom: -140px;
+    right: -90px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 6vw;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: linear-gradient(90deg, var(--brand-1), rgba(3, 123, 255, 0.2));
+}
+
+.hero-section {
+    min-height: 78vh;
+    margin: 2rem 6vw;
+    border-radius: 26px;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(29, 24, 66, 0.5), rgba(3, 123, 255, 0.2));
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    padding: 10vh 6vw;
+    max-width: 760px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+.section {
+    margin: 2rem 6vw;
+    padding: 2rem;
+    border-radius: 24px;
+}
+
+.glass {
+    background: linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.2));
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 35px rgba(108, 61, 181, 0.13);
+    backdrop-filter: blur(12px);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.service-card {
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card i {
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(3, 123, 255, 0.2);
+}
+
+.contact-form {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 700px;
+}
+
+input,
+textarea {
+    border: 1px solid rgba(3, 123, 255, 0.2);
+    border-radius: 12px;
+    padding: 0.8rem;
+    font: inherit;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.btn-glossy,
+.btn-secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem;
+    padding: 0.8rem 1.1rem;
+    border: 0;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-glossy {
+    color: #fff;
+    background: linear-gradient(120deg, var(--brand-2), var(--brand-3));
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px rgba(3, 123, 255, 0.4);
+}
+
+.btn-glossy:hover {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-secondary {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(3, 123, 255, 0.24);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text);
+    text-decoration: none;
+}
+
+.site-footer {
+    margin: 2rem 6vw;
+    padding: 1rem;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.alert {
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.success {
+    background: rgba(0, 128, 0, 0.15);
+    border: 1px solid rgba(0, 128, 0, 0.3);
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.admin-body {
+    padding: 2rem;
+}
+
+.admin-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.messages-table th,
+.messages-table td {
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(29, 24, 66, 0.15);
+}
+
+.small {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 15, 0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    width: min(680px, 90vw);
+    padding: 1.2rem;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 14px;
+    top: 8px;
+    border: 0;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.standalone-page {
+    max-width: 750px;
+    margin: 6vh auto;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    from { transform: translateY(0) translateX(0); }
+    to { transform: translateY(20px) translateX(15px); }
+}
+
+@media (max-width: 800px) {
+    .site-header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero-content {
+        padding-top: 6vh;
+    }
+}
